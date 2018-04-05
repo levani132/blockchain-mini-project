@@ -1,0 +1,11 @@
+{
+  "name": "blockchain-mini-project",
+  "version": "1.0.0",
+  "description": "Simple mini project for blockchain",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Levan Beroshvili",
+  "license": "ISC"
+}
