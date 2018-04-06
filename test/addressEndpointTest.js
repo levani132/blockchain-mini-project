@@ -12,6 +12,9 @@ chai.use(chaiJson)
  */
 describe("Test for app's GET /address/:bitcoin_addr endpoint", () => {
 
+    /* 
+     * Test for correct address with zero unspent transactions
+     */
     it("Should test correct address with 0 unspent transactions", done => {
         chai.request(app)
             .get('/address/1Aff4FgrtA1dZDwajmknWTwU2WtwUvfiXa')
@@ -23,6 +26,9 @@ describe("Test for app's GET /address/:bitcoin_addr endpoint", () => {
             })
     })
 
+    /* 
+     * Test for correct address with one unspent transactions
+     */
     it("Should test correct address with one unspent transactions", done => {
         
         let expected  = {
@@ -44,6 +50,9 @@ describe("Test for app's GET /address/:bitcoin_addr endpoint", () => {
             })
     })
 
+    /* 
+     * Test for correct address with multiple unspent transactions
+     */
     it("Should test correct address with multiple unspent transactions", done => {
         
         let expected  = {
@@ -69,7 +78,10 @@ describe("Test for app's GET /address/:bitcoin_addr endpoint", () => {
                 done()
             })
     })
-    
+
+    /* 
+     * Test for incorrect address
+     */
     it("Should incorrect address result", done => {
         chai.request(app)
             .get('/address/1Aff4FgrtA1dZDwajmknWTwU2WtwUvfiXa1')
