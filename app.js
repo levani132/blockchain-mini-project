@@ -2,6 +2,9 @@ const express = require('express')
 const service = require('./service')
 const app = express()
 
+// Will return pretified jsons
+app.set('json spaces', 2)
+
 /*
  * Endpoint /address/:bitcoin_addr returns all
  * unspent outputs of the :bitcoin_addr in json
