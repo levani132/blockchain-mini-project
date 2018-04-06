@@ -11,5 +11,9 @@
   "dependencies": {
     "axios": "^0.18.0",
     "express": "^4.16.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/levani132/blockchain-mini-project.git"
   }
 }
