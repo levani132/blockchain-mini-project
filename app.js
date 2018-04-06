@@ -5,7 +5,7 @@ const app = express()
 app.get('/address/:bitcoin_addr', async (req, res) => {
     try{
         unspentOutputs = await service.getUnspentOutputs(req.params.bitcoin_addr)
-        res.send(unspentOutputs)
+        res.json(unspentOutputs)
     }catch(error){
         res.status(500).send(error.message)
     }
