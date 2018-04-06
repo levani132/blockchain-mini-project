@@ -16,7 +16,6 @@ describe("Mini project service's getUnspentOutputs test", () => {
             succeeded = unspentOutputsResult.hasOwnProperty('outputs')
             if(!succeeded){
                 assert.ok(succeeded, "Result " + unspentOutputsResult + " doesn't have property outputs")
-                //done('Fail')
             }else{
                 unspentOutputsResult.outputs.forEach(x => {
                     succeeded = succeeded && x.hasOwnProperty('value')
@@ -26,10 +25,6 @@ describe("Mini project service's getUnspentOutputs test", () => {
                     succeeded = succeeded && x.hasOwnProperty('output_idx')
                     assert.ok(succeeded, "Output " + x + " doesn't have property 'output_idx'")
                 })
-                // if(!succeeded)
-                //     done(new Error('Fail'))
-                // else
-                //     done()
             }
         }, error => {
             assert.ok(false, error.message)
@@ -71,6 +66,7 @@ describe("Mini project service's getUnspentOutputs test", () => {
                 unspentOutputsResult.outputs.forEach(actual => {
                     succeeded = succeeded && assertEqualsJson(actual, expected)
                 })
+                assert.ok(succeeded, 'Incorrect values')
             }
         }, error => {
             assert.ok(false, error.message)
