@@ -110,13 +110,24 @@ describe("Mini project service's getUnspentOutputs test", () => {
     })
 
     /*
-     * Test to check for error, if address doesn't have unspent outputs
+     * Test to check for error, when address doesn't have unspent outputs
      */
     it("Error test", () => {
         return service.getUnspentOutputs('1Aff4FgrtA1dZDwajmknWTwU2WtwUvfiXa').then(unspentOutputsResult => {
             assert.ok(false, "error wasn't thrown")
         }, error => {
             assert.strictEqual(error.message, 'No free outputs to spend', 'Incorrect error message')
+        })
+    })
+
+    /*
+     * Test to check for error, when address is invalid
+     */
+    it("Error test", () => {
+        return service.getUnspentOutputs('1Aff4FgrtA1dZDwajmknWTwU2WtwUvfiXa1').then(unspentOutputsResult => {
+            assert.ok(false, "error wasn't thrown")
+        }, error => {
+            assert.strictEqual(error.message, 'Invalid Bitcoin Address', 'Incorrect error message')
         })
     })
 

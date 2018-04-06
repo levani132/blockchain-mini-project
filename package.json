@@ -15,5 +15,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/levani132/blockchain-mini-project.git"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "chai-json": "^1.0.0"
   }
 }

@@ -2,6 +2,8 @@ const express = require('express')
 const service = require('./service')
 const app = express()
 
+const PORT = 8080
+
 // Will return pretified jsons
 app.set('json spaces', 2)
 
@@ -28,4 +30,6 @@ app.get('/address/:bitcoin_addr', async (req, res) => {
     }
 })
 
-app.listen(8080)
+app.listen(PORT, () => console.log('server started on ' + PORT))
+
+module.exports = app // For testing purposes
