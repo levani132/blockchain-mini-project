@@ -1,5 +1,5 @@
 const assert = require('assert')
-const service = require(__dirname + '/../service.js')
+const service = require(__dirname + '/../service')
 
 /* 
  * Test for app's service's getUnspentOutputs
