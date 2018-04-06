@@ -8,7 +8,7 @@ describe("Mini project service's getUnspentOutputs test", () => {
     /*
      * Test to find whether returned json format is correct or not (doesn't test exceptions)
      */
-    it("Test to find whether returned json format is correct or not (doesn't test exceptions)", () => {
+    it("Returned format test (doesn't test exceptions)", () => {
         
         
         return service.getUnspentOutputs('19zfdQYYYp4ycMhArjnCofDxqvaXjzygSj').then(unspentOutputsResult => {
@@ -50,7 +50,7 @@ describe("Mini project service's getUnspentOutputs test", () => {
     /*
      * Test to find whether one normal result was correct or not (doesn't test exceptions)
      */
-    it("Test to find whether one normal result was correct or not (doesn't test exceptions)", () => {
+    it("Single result test (doesn't test exceptions)", () => {
         let expected = {
             "value": 8991,
             "tx_hash": "233e8df5d077c71fbb47f6c033e321526430ee8089aee13f81d54fbaf66f9bdb",
@@ -76,7 +76,7 @@ describe("Mini project service's getUnspentOutputs test", () => {
     /*
      * Test to find whether multiple normal results was correct or not (doesn't test exceptions)
      */
-    it("Test to find whether multiple normal results was correct or not (doesn't test exceptions)", () => {
+    it("Multi result test (doesn't test exceptions)", () => {
         let expectedResult = {
             outputs: [
                 {
@@ -112,7 +112,7 @@ describe("Mini project service's getUnspentOutputs test", () => {
     /*
      * Test to check for error, if address doesn't have unspent outputs
      */
-    it("Test to check for error, if address doesn't have unspent outputs", () => {
+    it("Error test", () => {
         return service.getUnspentOutputs('1Aff4FgrtA1dZDwajmknWTwU2WtwUvfiXa').then(unspentOutputsResult => {
             assert.ok(false, "error wasn't thrown")
         }, error => {
