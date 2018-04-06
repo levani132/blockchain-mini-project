@@ -2,6 +2,20 @@ const express = require('express')
 const service = require('./service')
 const app = express()
 
+/*
+ * Endpoint /address/:bitcoin_addr returns all
+ * unspent outputs of the :bitcoin_addr in json
+ * list format like this
+ * {
+ *      "outputs": [
+ *          {
+ *              "value": (long long)value of the transaction
+ *              "tx_hash": (string)"transaction hash",
+ *              "output_idx": (int)index of the outputs
+ *          }
+ *      ]
+ * }
+ */
 app.get('/address/:bitcoin_addr', async (req, res) => {
     try{
         unspentOutputs = await service.getUnspentOutputs(req.params.bitcoin_addr)
