@@ -4,6 +4,7 @@ const chaiJson = require('chai-json')
 const app = require('../app')
 const should = chai.should()
 
+// Make chai use http requests and json object assertions
 chai.use(chaiHttp)
 chai.use(chaiJson)
 
