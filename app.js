@@ -30,6 +30,6 @@ app.get('/address/:bitcoin_addr', async (req, res) => {
     }
 })
 
-app.listen(PORT, () => console.log('server started on ' + PORT), err => console.log(err.message))
+app.listen(PORT, () => console.log('server started on ' + PORT)).on('error', console.log)
 
 module.exports = app // For testing purposes
